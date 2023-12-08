@@ -17,14 +17,15 @@ def experiments():
 
     print('Running experiments:')
     for i in range(10):
-        data = generate_data(1000)
+        # data = generate_data(1000)
+        data = generate_data(50)
         print(f'Iteration {i+1}/10 running...')
         new_query_row = []
 
         kd = KDTree(data)
         start = time.time()
         for i in range(scale):
-            res1 = kd.range_query('bell', 'erdos', 7, 12)
+            res1 = kd.range_query('bell', 'erdos', 7, 12,100,200)
         end = time.time()
         new_query_row.append(end-start)
 
@@ -32,14 +33,14 @@ def experiments():
         quad.mass_insert(data)
         start = time.time()
         for i in range(scale):
-            res2 = quad.range_query('bell', 'erdos', 7, 12)
+            res2 = quad.range_query('bell', 'erdos', 7, 12,100,200)
         end = time.time()
         new_query_row.append(end - start)
 
         rangetree = Range(data)
         start = time.time()
         for i in range(scale):
-            res3 = rangetree.range_query('bell', 'erdos', 7, 12)
+            res3 = rangetree.range_query('bell', 'erdos', 7, 12,100,200)
         end = time.time()
         new_query_row.append(end - start)
 
@@ -47,7 +48,7 @@ def experiments():
         rtree.mass_insert(data)
         start = time.time()
         for i in range(scale):
-            res4 = rtree.range_query('bell', 'erdos', 7, 12)
+            res4 = rtree.range_query('bell', 'erdos', 7, 12,100,200)
         end = time.time()
         new_query_row.append(end - start)
 

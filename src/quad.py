@@ -44,6 +44,7 @@ class Quad(object):
             if str_average(self.top_left.x, self.bot_right.x) >= node.pos.x:
                 if (self.top_left.y + self.bot_right.y) / 2 >= node.pos.y:
                     if (self.top_left.z + self.bot_right.z) / 2 >= node.pos.z:
+                        # print('top left')
                         if self.top_left_tree is None:
                             self.top_left_tree = Quad(
                                 Point(self.top_left.x, self.top_left.y, self.top_left.z),
@@ -81,7 +82,6 @@ class Quad(object):
                                 min_dblprecords=self.min_dblprecords, max_dblprecords=self.max_dblprecords)
                             self.bot_right_tree.insert(node)
             else:
-
                 if (self.top_left.y + self.bot_right.y) / 2 >= node.pos.y:
                     if (self.top_left.z + self.bot_right.z) / 2 >= node.pos.z:
                         if self.top_left_tree is None:

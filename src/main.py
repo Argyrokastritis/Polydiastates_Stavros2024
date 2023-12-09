@@ -53,3 +53,8 @@ if __name__ == '__main__':
     ans = input("""\n\n\nDo you want to run the experiments? (this can take minutes) y/n """)
     if ans == 'y':
         experiments()
+
+    # ask user if they want to exit
+    ans = input("""\n\n\nDo you want to exit the multidimensional data structures project?""")
+    if ans == 'y':
+        exit()

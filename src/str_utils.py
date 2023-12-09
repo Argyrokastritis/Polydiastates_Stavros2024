@@ -29,24 +29,6 @@ def str_average(a, b):
     b = debase(pad(b, n))
     return enbase((a + b) / 2)
 
-
-# def str_average(a, b):
-# a = str(a)
-# b = str(b)
-# n = max(len(a), len(b))
-# a = debase(pad(a, n))
-# b = debase(pad(b, n))
-# result = []
-# carry = 0
-# for i in range(n-1, -1, -1):
-#     x = a[i] + b[i] + carry
-#     carry = x // 2
-#     result.append(x % 2)
-# if carry:
-#    result.append(carry)
-# return enbase(result[::-1])
-
-
 def str_diff(a, b):
     n = max(len(a), len(b))
     a = debase(pad(a, n))
